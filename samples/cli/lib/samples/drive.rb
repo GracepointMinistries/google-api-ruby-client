@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-require 'google/apis/drive_v3'
+require 'google2/apis/drive_v3'
 require 'base_cli'
 
 
@@ -23,7 +23,7 @@ module Samples
   #
   #     $ ./google-api-samples drive upload ~/myvideo.mov
   class Drive < BaseCli
-    Drive = Google::Apis::DriveV3
+    Drive = Google2::Apis::DriveV3
 
     desc 'upload FILE', 'Upload a file to Google Drive'
     method_option :name, type: :string

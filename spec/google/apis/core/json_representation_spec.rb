@@ -13,9 +13,9 @@
 # limitations under the License.
 
 require 'spec_helper'
-require 'google/apis/core/json_representation'
+require 'google2/apis/core/json_representation'
 
-RSpec.describe Google::Apis::Core::JsonRepresentation do
+RSpec.describe Google2::Apis::Core::JsonRepresentation do
   let(:child_class) do
     Class.new do
       attr_accessor :value
@@ -41,7 +41,7 @@ RSpec.describe Google::Apis::Core::JsonRepresentation do
 
   let(:representer_class) do
     klass = child_class
-    Class.new(Google::Apis::Core::JsonRepresentation) do
+    Class.new(Google2::Apis::Core::JsonRepresentation) do
       property :unset_value, as: 'unsetValue'
       property :nil_value, as: 'nilValue'
       property :numeric_value, as: 'numericValue'

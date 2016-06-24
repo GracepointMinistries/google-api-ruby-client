@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-require 'google/apis/youtube_v3'
+require 'google2/apis/youtube_v3'
 require 'base_cli'
 
 
@@ -24,7 +24,7 @@ module Samples
   #     $ ./google-api-samples youtube upload ~/myvideo.mov --title="So funny!"
   #
   class YouTube < BaseCli
-    YT = Google::Apis::YoutubeV3
+    YT = Google2::Apis::YoutubeV3
 
     desc 'upload FILE', 'Upload a video to YouTube'
     method_option :title, type: :string

@@ -1,14 +1,14 @@
 require 'spec_helper'
 
-require 'google/api_client/auth/storage'
+require 'google2/api_client/auth/storage'
 
-describe Google::APIClient::Storage do
+describe Google2::APIClient::Storage do
   let(:root_path) { File.expand_path(File.join(__FILE__, '..', '..', '..')) }
   let(:json_file) { File.expand_path(File.join(root_path, 'fixtures', 'files', 'auth_stored_credentials.json')) }
 
   let(:store) { double }
   let(:client_stub) { double }
-  subject { Google::APIClient::Storage.new(store) }
+  subject { Google2::APIClient::Storage.new(store) }
 
   describe 'authorize' do
     it 'should authorize' do

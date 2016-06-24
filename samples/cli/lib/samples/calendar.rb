@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-require 'google/apis/calendar_v3'
+require 'google2/apis/calendar_v3'
 require 'base_cli'
 
 
@@ -23,7 +23,7 @@ module Samples
   #
   #     $ ./google-api-samples calendar list --limit 10
   class Calendar < BaseCli
-    Calendar = Google::Apis::CalendarV3
+    Calendar = Google2::Apis::CalendarV3
 
     desc 'schedule', 'Create an event'
     method_option :summary, type: :string, required: true

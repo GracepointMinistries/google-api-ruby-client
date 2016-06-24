@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-require 'google/apis/sheets_v4'
+require 'google2/apis/sheets_v4'
 require 'base_cli'
 
 
@@ -39,7 +39,7 @@ module Samples
   #     John          Male    3. Junior     CA          Physics  Basketball
   #     Jonathan      Male    2. Sophomore  SC          Math     Debate
   class Sheets < BaseCli
-    Sheets = Google::Apis::SheetsV4
+    Sheets = Google2::Apis::SheetsV4
 
     desc 'get_values', 'Get values from Google Spreadseets '
     method_option :spreadsheet_key, type: :string, required: true

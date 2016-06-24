@@ -15,9 +15,9 @@
 require 'sinatra'
 require 'googleauth'
 require 'googleauth/stores/redis_token_store'
-require 'google/apis/drive_v3'
-require 'google/apis/calendar_v3'
-require 'google-id-token'
+require 'google2/apis/drive_v3'
+require 'google2/apis/calendar_v3'
+require 'google2-id-token'
 require 'dotenv'
 
 LOGIN_URL = '/'
@@ -25,9 +25,9 @@ LOGIN_URL = '/'
 configure do
   Dotenv.load
 
-  Google::Apis::ClientOptions.default.application_name = 'Ruby client samples'
-  Google::Apis::ClientOptions.default.application_version = '0.9'
-  Google::Apis::RequestOptions.default.retries = 3
+  Google2::Apis::ClientOptions.default.application_name = 'Ruby client samples'
+  Google2::Apis::ClientOptions.default.application_version = '0.9'
+  Google2::Apis::RequestOptions.default.retries = 3
 
   enable :sessions
   set :show_exceptions, false
@@ -82,8 +82,8 @@ end
 
 # Retrieve the 10 most recently modified files in Google Drive
 get('/drive') do
-  drive = Google::Apis::DriveV3::DriveService.new
-  drive.authorization = credentials_for(Google::Apis::DriveV3::AUTH_DRIVE)
+  drive = Google2::Apis::DriveV3::DriveService.new
+  drive.authorization = credentials_for(Google2::Apis::DriveV3::AUTH_DRIVE)
   @result = drive.list_files(page_size: 10,
                              fields: 'files(name,modified_time,web_view_link),next_page_token')
   erb :drive
@@ -91,8 +91,8 @@ end
 
 # Retrieve the next 10 upcoming events from Google Calendar
 get('/calendar') do
-  calendar = Google::Apis::CalendarV3::CalendarService.new
-  calendar.authorization = credentials_for(Google::Apis::CalendarV3::AUTH_CALENDAR)
+  calendar = Google2::Apis::CalendarV3::CalendarService.new
+  calendar.authorization = credentials_for(Google2::Apis::CalendarV3::AUTH_CALENDAR)
   calendar_id = 'primary'
   @result = calendar.list_events(calendar_id,
                                  max_results: 10,

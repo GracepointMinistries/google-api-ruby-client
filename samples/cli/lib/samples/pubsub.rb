@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-require 'google/apis/pubsub_v1'
+require 'google2/apis/pubsub_v1'
 require 'base_cli'
 
 
@@ -30,7 +30,7 @@ module Samples
   #     $ ./google-api-samples pubsub delete_topic mytopic --project=623040240964
   #
   class PubSub < BaseCli
-    Pubsub = Google::Apis::PubsubV1
+    Pubsub = Google2::Apis::PubsubV1
 
     desc 'create_topic TOPIC_NAME', 'Create a topic'
     method_option :project, type: :string, required: true

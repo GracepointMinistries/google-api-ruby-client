@@ -13,19 +13,19 @@
 # limitations under the License.
 
 require 'spec_helper'
-require 'google/apis/core/hashable'
+require 'google2/apis/core/hashable'
 
-RSpec.describe Google::Apis::Core::Hashable do
+RSpec.describe Google2::Apis::Core::Hashable do
   let(:child_class) do
     Class.new do
-      include Google::Apis::Core::Hashable
+      include Google2::Apis::Core::Hashable
       attr_accessor :value
     end
   end
 
   let(:model_class) do
     Class.new do
-      include Google::Apis::Core::Hashable
+      include Google2::Apis::Core::Hashable
       attr_accessor :value
       attr_accessor :value2
       attr_accessor :children

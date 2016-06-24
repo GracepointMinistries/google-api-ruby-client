@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-require 'google/apis/bigquery_v2'
+require 'google2/apis/bigquery_v2'
 require 'base_cli'
 
 
@@ -25,7 +25,7 @@ module Samples
   #     $ ./google-api-samples bigquery list_tables --project_id=publicdata --dataset_id=samples
   #     $ ./google-api-samples bigquery list_table_data --project_id=publicdata --dataset_id=samples --table_id=wikipedia --max_results=10
   class Bigquery < BaseCli
-    Bigquery = Google::Apis::BigqueryV2
+    Bigquery = Google2::Apis::BigqueryV2
 
     desc 'list datasets', 'List datasets'
     method_option :project_id, type: :string

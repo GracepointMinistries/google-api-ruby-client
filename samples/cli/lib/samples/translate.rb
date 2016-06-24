@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-require 'google/apis/translate_v2'
+require 'google2/apis/translate_v2'
 require 'base_cli'
 
 
@@ -25,7 +25,7 @@ module Samples
   #      Hello
   #
   class Translate < BaseCli
-    Translate = Google::Apis::TranslateV2
+    Translate = Google2::Apis::TranslateV2
 
     desc 'translate PHRASE', 'Translate a phrase'
     method_option :source, type: :string

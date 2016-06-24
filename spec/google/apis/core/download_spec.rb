@@ -13,18 +13,18 @@
 # limitations under the License.
 
 require 'spec_helper'
-require 'google/apis/core/download'
-require 'google/apis/core/json_representation'
+require 'google2/apis/core/download'
+require 'google2/apis/core/json_representation'
 require 'hurley/test'
 require 'tempfile'
 require 'tmpdir'
 
-RSpec.describe Google::Apis::Core::DownloadCommand do
+RSpec.describe Google2::Apis::Core::DownloadCommand do
   include TestHelpers
   include_context 'HTTP client'
 
   let(:command) do
-    command = Google::Apis::Core::DownloadCommand.new(:get, 'https://www.googleapis.com/zoo/animals')
+    command = Google2::Apis::Core::DownloadCommand.new(:get, 'https://www.googleapis.com/zoo/animals')
     command.download_dest = dest
     command
   end

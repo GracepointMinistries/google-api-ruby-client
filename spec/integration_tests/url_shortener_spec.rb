@@ -13,12 +13,12 @@
 # limitations under the License.
 
 require 'spec_helper'
-require 'google/apis/urlshortener_v1'
+require 'google2/apis/urlshortener_v1'
 require 'googleauth'
 
-Urlshortener = Google::Apis::UrlshortenerV1
+Urlshortener = Google2::Apis::UrlshortenerV1
 
-RSpec.describe Google::Apis::UrlshortenerV1, :if => run_integration_tests? do
+RSpec.describe Google2::Apis::UrlshortenerV1, :if => run_integration_tests? do
 
   before(:context) do
     WebMock.allow_net_connect!

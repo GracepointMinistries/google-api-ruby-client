@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-require 'google/apis/gmail_v1'
+require 'google2/apis/gmail_v1'
 require 'base_cli'
 require 'rmail'
 
@@ -26,7 +26,7 @@ module Samples
   #       --subject='Hello'
   #
   class Gmail < BaseCli
-    Gmail = Google::Apis::GmailV1
+    Gmail = Google2::Apis::GmailV1
 
     desc 'send TEXT', 'Send a message with the gmail API'
     method_option :to, type: :string, required: true

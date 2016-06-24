@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-require 'google/apis/analytics_v3'
+require 'google2/apis/analytics_v3'
 require 'base_cli'
 
 module Samples
@@ -32,7 +32,7 @@ module Samples
   #     20151208  2            2         1            50.0                   0.0                 0.0
   #
   class Analytics < BaseCli
-    Analytics = Google::Apis::AnalyticsV3
+    Analytics = Google2::Apis::AnalyticsV3
 
     desc 'show_visits PROFILE_ID', 'Show visists for the given analytics profile ID'
     method_option :start, type: :string, required: true

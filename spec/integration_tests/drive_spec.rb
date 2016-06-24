@@ -1,11 +1,11 @@
 require 'spec_helper'
-require 'google/apis/drive_v2'
+require 'google2/apis/drive_v2'
 require 'googleauth'
 require 'fileutils'
 
-Drive = Google::Apis::DriveV2
+Drive = Google2::Apis::DriveV2
 
-RSpec.describe Google::Apis::DriveV2, :if => run_integration_tests? do
+RSpec.describe Google2::Apis::DriveV2, :if => run_integration_tests? do
 
   before(:context) do
     WebMock.allow_net_connect!

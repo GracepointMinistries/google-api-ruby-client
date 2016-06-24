@@ -44,8 +44,8 @@ require 'fakefs/spec_helpers'
 require 'json_spec'
 require 'logging'
 require 'rspec/logging_helper'
-require 'google/apis'
-require 'google/apis/core/base_service'
+require 'google2/apis'
+require 'google2/apis/core/base_service'
 
 # Configure RSpec to capture log messages for each test. The output from the
 # logs will be stored in the @log_output variable. It is a StringIO instance.
@@ -56,7 +56,7 @@ RSpec.configure do |config|
   config.include WebMock::API
   config.capture_log_messages
 
-  Google::Apis.logger.level = Logger::DEBUG
+  Google2::Apis.logger.level = Logger::DEBUG
   WebMock::Config.instance.query_values_notation = :flat_array
 end
 
@@ -70,7 +70,7 @@ end
 
 RSpec.shared_context 'HTTP client' do
   let(:client) do
-    Google::Apis::Core::BaseService.new('', '').client
+    Google2::Apis::Core::BaseService.new('', '').client
   end
 end
 
@@ -80,10 +80,10 @@ module TestHelpers
 end
 
 # Enable retries for tests
-Google::Apis::RequestOptions.default.retries = 5
+Google2::Apis::RequestOptions.default.retries = 5
 
 # Allow testing different adapters
-Google::Apis::ClientOptions.default.use_net_http = true if ENV['USE_NET_HTTP']
+Google2::Apis::ClientOptions.default.use_net_http = true if ENV['USE_NET_HTTP']
 # Temporarily patch WebMock to allow chunked responses for Net::HTTP
 module Net
   module WebMockHTTPResponse
